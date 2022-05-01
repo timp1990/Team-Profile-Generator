@@ -2,16 +2,30 @@ const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
     describe("getName", () => {
-        it("should return an object containing a 'number' property when called with the 'new' keyword", () => {
-            const obj = new Employee();
-
-            expect("number" in obj).toEqual(true);
+        it("Should return the name of an employee class object", () => {
+            const obj = new Employee('Brendan Eich', 1, 'BrendanEich@company.com');
+            expect(obj.getName()).toEqual('Brendan Eich');
         });
+    })
 
-        it("should default 'number' to 0", () => {
-            const obj = new Employee();
+    describe("getID", () => {
+        it("Should return the ID of an employee class object", () => {
+            const obj = new Employee('Brendan Eich', 1, 'BrendanEich@company.com');
+            expect(obj.getID()).toEqual(1);
+        });
+    })
 
-            expect(obj.number).toEqual(0);
+    describe("getEmail", () => {
+        it("Should return the Email of an employee class object", () => {
+            const obj = new Employee('Brendan Eich', 1, 'BrendanEich@company.com');
+            expect(obj.getEmail()).toEqual('BrendanEich@company.com');
+        });
+    })
+
+    describe("getRole", () => {
+        it("Should return the Role of an employee class object", () => {
+            const obj = new Employee('Brendan Eich', 1, 'BrendanEich@company.com');
+            expect(obj.getRole()).toEqual('Employee');
         });
     })
 });
